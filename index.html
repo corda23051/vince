@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Bio-Data</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    background: #e9eef5;
+    font-family: Arial, sans-serif;
+    color: #263445;
+}
+
+.resume {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-top: 9px solid #142d4e;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px #0002;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid #c49a45;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: clamp(23px, 5vw, 34px);
+    letter-spacing: 3px;
+    color: #142d4e;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 10px;
+    color: #b18b43;
+    letter-spacing: 2px;
+    margin-top: 7px;
+}
+
+.photo-area {
+    width: 105px;
+    height: 125px;
+    flex-shrink: 0;
+    border: 2px solid #c49a45;
+    overflow: hidden;
+    background: #f3f5f8;
+}
+
+.photo-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    background: #142d4e;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-left: 5px solid #c49a45;
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    color: #526176;
+    margin-bottom: 4px;
+}
+
+.field input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    border-bottom: 1px solid #cbd3df;
+    padding: 7px 3px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #142d4e;
+    background: transparent;
+    outline: none;
+    border-radius: 0;
+}
+
+.field input:focus {
+    border-bottom: 2px solid #c49a45;
+}
+
+.field input::placeholder {
+    color: #aab3c0;
+    font-weight: normal;
+}
+
+.bottom-note {
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: justify;
+    color: #596579;
+    margin-top: 25px;
+}
+
+.signature {
+    margin: 45px auto 0;
+    border-top: 1px solid #142d4e;
+    max-width: 230px;
+    text-align: center;
+    padding-top: 7px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #142d4e;
+}
+
+.print-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 7px;
+    background: #142d4e;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.print-button:hover {
+    background: #c49a45;
+}
+
+@page {
+    size: A4;
+    margin: 10mm;
+}
+
+@media(max-width:480px) {
+    body {
+        padding: 7px;
+    }
+
+    .resume {
+        padding: 14px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .photo-area {
+        width: 90px;
+        height: 110px;
+    }
+
+    .grid {
+        gap: 10px;
+    }
+
+    .field input {
+        font-size: 11px;
+    }
+
+    .section-title {
+        font-size: 11px;
+    }
+}
+
+@media print {
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .resume {
+        max-width: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    .print-button {
+        display: none;
+    }
+
+    .section-title {
+        background: #142d4e !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="resume">
+
+<!-- HEADER -->
+<div class="header">
+    <div>
+        <h1>BIO-DATA</h1>
+        <div class="subtitle">PERSONAL INFORMATION SHEET</div>
+    </div>
+
+    <div class="photo-area">
+        <img src="cabs.jpg" alt="ID Picture of Vincent Butalid">
+    </div>
+</div>
+
+<!-- PERSONAL DATA -->
+<div class="section">
+<div class="section-title">01 — PERSONAL DATA</div>
+<div class="grid">
+
+<div class="field">
+<label>Position Desired</label>
+<input placeholder="Enter position">
+</div>
+
+<div class="field">
+<label>Date</label>
+<input value="NOVEMBER 18, 2024">
+</div>
+
+<div class="field">
+<label>Full Name</label>
+<input value="VINCENT CAGAAAN BUTALID">
+</div>
+
+<div class="field">
+<label>Sex</label>
+<input value="MALE">
+</div>
+
+<div class="field full">
+<label>City Address</label>
+<input value="MILITAR, TUKURAN">
+</div>
+
+<div class="field full">
+<label>Provincial Address</label>
+<input value="ZAMBOANGA DEL SUR">
+</div>
+
+<div class="field">
+<label>Telephone</label>
+<input value="N/A">
+</div>
+
+<div class="field">
+<label>Cellphone</label>
+<input value="09114898777">
+</div>
+
+<div class="field full">
+<label>Email Address</label>
+<input value="butalid.vincent20@gmail.com">
+</div>
+
+<div class="field">
+<label>Date of Birth</label>
+<input value="MAY 30, 1997">
+</div>
+
+<div class="field">
+<label>Place of Birth</label>
+<input value="TUKURAN, ZDS">
+</div>
+
+<div class="field">
+<label>Civil Status</label>
+<input value="SINGLE">
+</div>
+
+<div class="field">
+<label>Citizenship</label>
+<input value="FILIPINO">
+</div>
+
+<div class="field">
+<label>Height</label>
+<input value="5'6&quot;">
+</div>
+
+<div class="field">
+<label>Weight</label>
+<input value="58 KGS">
+</div>
+
+<div class="field full">
+<label>Religion</label>
+<input value="ROMAN CATHOLIC">
+</div>
+
+<div class="field">
+<label>Spouse</label>
+<input value="N/A">
+</div>
+
+<div class="field">
+<label>Occupation</label>
+<input value="N/A">
+</div>
+
+<div class="field">
+<label>Name of Children</label>
+<input value="N/A">
+</div>
+
+<div class="field">
+<label>Date of Birth</label>
+<input value="N/A">
+</div>
+
+<div class="field">
+<label>Father's Name</label>
+<input value="ISAIAS DIO, BUTALID JR.">
+</div>
+
+<div class="field">
+<label>Father's Occupation</label>
+<input value="FISHERMAN">
+</div>
+
+<div class="field">
+<label>Mother's Name</label>
+<input value="ROSAUNDA MIANO CAGAAAN">
+</div>
+
+<div class="field">
+<label>Mother's Occupation</label>
+<input value="HOUSEWIFE">
+</div>
+
+<div class="field full">
+<label>Parent's Address</label>
+<input value="P. BURGOS, MILITAR, TUKURAN, ZDS">
+</div>
+
+<div class="field full">
+<label>Language/Dialect Spoken and Written</label>
+<input value="BISAYA, TAGALOG & ENGLISH">
+</div>
+
+<div class="field full">
+<label>Emergency Contact Person</label>
+<input value="RITCHEL BOTAVIO ORTEGA">
+</div>
+
+<div class="field full">
+<label>Emergency Contact Address</label>
+<input value="BULGU / MILITAR, TUKURAN, ZDS">
+</div>
+
+</div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+<div class="section-title">02 — EDUCATIONAL ATTAINMENT</div>
+<div class="grid">
+
+<div class="field full">
+<label>Elementary</label>
+<input value="MILITAR ELEMENTARY SCHOOL">
+</div>
+
+<div class="field">
+<label>Year Graduated</label>
+<input value="2011">
+</div>
+
+<div class="field full">
+<label>High School</label>
+<input value="TUKURAN TECHNICAL VOCATIONAL HIGH SCHOOL">
+</div>
+
+<div class="field">
+<label>Year Graduated</label>
+<input value="2015">
+</div>
+
+<div class="field full">
+<label>College</label>
+<input value="JOSEFINA HERRERA CERILLES STATE COLLEGE">
+</div>
+
+<div class="field">
+<label>Year Graduated</label>
+<input value="APRIL 10, 2019">
+</div>
+
+<div class="field full">
+<label>Degree Received</label>
+<input value="BACHELOR IN ELEMENTARY EDUCATION">
+</div>
+
+<div class="field full">
+<label>Special Skills</label>
+<input value="COMPUTER LITERATE">
+</div>
+
+</div>
+</div>
+
+<!-- EMPLOYMENT -->
+<div class="section">
+<div class="section-title">03 — EMPLOYMENT RECORDS</div>
+<div class="grid">
+
+<div class="field full">
+<label>Company Name</label>
+<input value="LGU TUKURAN / MUNICIPAL ECONOMIC ENTERPRISE DEVELOPMENT OFFICE">
+</div>
+
+<div class="field">
+<label>Position</label>
+<input value="JOB ORDER">
+</div>
+
+<div class="field">
+<label>Employment Period</label>
+<input value="JUNE 01 - DECEMBER 31, 2019">
+</div>
+
+<div class="field full">
+<label>Company Name</label>
+<input value="LGU TUKURAN / MUNICIPAL TREASURER'S OFFICE">
+</div>
+
+<div class="field">
+<label>Position</label>
+<input value="ADMIN. AIDE II (BOOKKEEPER I)">
+</div>
+
+<div class="field">
+<label>Employment Period</label>
+<input value="OCTOBER 16, 2023 - PERMANENT">
+</div>
+
+</div>
+</div>
+
+<!-- CHARACTER REFERENCES -->
+<div class="section">
+<div class="section-title">04 — CHARACTER REFERENCES</div>
+<div class="grid">
+
+<div class="field">
+<label>Name</label>
+<input value="RH-YNNIE F. FELLOGAN">
+</div>
+
+<div class="field">
+<label>Company</label>
+<input value="PNP">
+</div>
+
+<div class="field">
+<label>Position</label>
+<input value="POLICE">
+</div>
+
+<div class="field">
+<label>Contact Number</label>
+<input value="09114890121">
+</div>
+
+<div class="field">
+<label>Name</label>
+<input value="TRAVINCH G. CAPUYAT">
+</div>
+
+<div class="field">
+<label>Company</label>
+<input value="DEPED">
+</div>
+
+<div class="field">
+<label>Position</label>
+<input value="TEACHER II">
+</div>
+
+<div class="field">
+<label>Contact Number</label>
+<input value="099218093312">
+</div>
+
+</div>
+</div>
+
+<!-- OTHER INFORMATION -->
+<div class="section">
+<div class="section-title">05 — OTHER INFORMATION</div>
+<div class="grid">
+
+<div class="field">
+<label>Residence Certificate No.</label>
+<input placeholder="Enter number">
+</div>
+
+<div class="field">
+<label>Issued At</label>
+<input placeholder="Enter place">
+</div>
+
+<div class="field">
+<label>Issued On</label>
+<input placeholder="Enter date">
+</div>
+
+<div class="field">
+<label>SSS Number</label>
+<input placeholder="Enter SSS number">
+</div>
+
+<div class="field">
+<label>TIN</label>
+<input value="710-319-283-000">
+</div>
+
+<div class="field">
+<label>NBI Number</label>
+<input placeholder="Enter NBI number">
+</div>
+
+<div class="field full">
+<label>Passport Number</label>
+<input value="P601422C">
+</div>
+
+</div>
+</div>
+
+<!-- CERTIFICATION -->
+<div class="bottom-note">
+I hereby certify that the above information is true and correct
+to the best of my knowledge and belief. I also understand that
+any misinterpretation will be considered sufficient reason for
+withdrawal of an offer or subsequent dismissal if employed.
+</div>
+
+<div class="signature">
+Applicant's Signature
+</div>
+
+<button class="print-button" onclick="window.print()">
+PRINT / SAVE AS PDF
+</button>
+
+</div>
+
+</body>
+</html>
