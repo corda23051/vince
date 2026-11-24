@@ -1,230 +1,367 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Bio-Data</title>
+<title>Vincent Butalid - Professional Resume</title>
 
 <style>
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 15px;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background: #e9eef5;
-    font-family: Arial, sans-serif;
-    color: #263445;
+    color: #29384a;
+    padding: 30px 15px;
 }
 
 .resume {
-    width: 100%;
-    max-width: 850px;
+    max-width: 950px;
     margin: auto;
     background: white;
-    padding: 25px;
-    border-top: 9px solid #142d4e;
-    border-radius: 8px;
-    box-shadow: 0 5px 25px #0002;
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 35px rgba(0,0,0,.12);
+}
+
+/* SIDEBAR */
+.sidebar {
+    background: #142d4e;
+    color: white;
+    padding: 35px 25px;
+}
+
+.profile {
+    text-align: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #49617d;
+}
+
+.photo-container {
+    width: 155px;
+    height: 155px;
+    margin: 0 auto 18px;
+    padding: 5px;
+    border-radius: 50%;
+    background: #8fc4ff;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid white;
+    display: block;
+}
+
+.profile h1 {
+    font-size: 22px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.profile p {
+    color: #b8cee8;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+.side-section {
+    margin-top: 28px;
+}
+
+.side-section h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #91c5fa;
+    border-bottom: 1px solid #49617d;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.contact {
+    margin-bottom: 13px;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.contact strong {
+    display: block;
+    color: #a9c7e8;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.side-section ul {
+    list-style: none;
+}
+
+.side-section li {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.side-section li::before {
+    content: "◆";
+    color: #8fc4ff;
+    font-size: 9px;
+    margin-right: 10px;
+}
+
+/* MAIN CONTENT */
+.main {
+    padding: 40px 35px;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    border-bottom: 2px solid #c49a45;
-    padding-bottom: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
-.header h1 {
-    font-size: clamp(23px, 5vw, 34px);
+.header span {
+    color: #3984c5;
+    font-size: 12px;
+    font-weight: bold;
     letter-spacing: 3px;
+}
+
+.header h2 {
+    font-size: 29px;
     color: #142d4e;
-    margin: 0;
+    margin-top: 8px;
 }
 
-.subtitle {
-    font-size: 10px;
-    color: #b18b43;
-    letter-spacing: 2px;
-    margin-top: 7px;
-}
-
-.photo-area {
-    width: 105px;
-    height: 125px;
-    flex-shrink: 0;
-    border: 2px solid #c49a45;
-    overflow: hidden;
-    background: #f3f5f8;
-}
-
-.photo-area img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.header p {
+    font-size: 13px;
+    color: #8290a1;
+    margin-top: 8px;
 }
 
 .section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.section-title {
-    background: #142d4e;
-    color: white;
-    padding: 10px;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border-left: 5px solid #c49a45;
-    margin-bottom: 10px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.section-heading {
+    display: flex;
+    align-items: center;
     gap: 12px;
+    margin-bottom: 18px;
 }
 
-.field {
-    min-width: 0;
-}
-
-.field.full {
-    grid-column: 1 / -1;
-}
-
-label {
-    display: block;
-    font-size: 10px;
+.number {
+    width: 35px;
+    height: 35px;
+    background: #e7f1fc;
+    color: #2469a6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
-    color: #526176;
-    margin-bottom: 4px;
+    font-size: 13px;
+    flex-shrink: 0;
 }
 
-.field input {
-    width: 100%;
-    min-width: 0;
-    border: none;
-    border-bottom: 1px solid #cbd3df;
-    padding: 7px 3px;
+.section-heading h2 {
+    font-size: 15px;
+    color: #142d4e;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.section p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #586779;
+    text-align: justify;
+}
+
+.timeline {
+    border-left: 2px solid #d8e7f6;
+    padding-left: 20px;
+    margin-left: 9px;
+}
+
+.entry {
+    position: relative;
+    margin-bottom: 23px;
+}
+
+.entry::before {
+    content: "";
+    position: absolute;
+    left: -26px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3986c8;
+}
+
+.entry h3 {
+    font-size: 14px;
+    color: #243c59;
+    margin-bottom: 5px;
+}
+
+.entry .school {
+    color: #347ab7;
     font-size: 12px;
     font-weight: 600;
-    color: #142d4e;
-    background: transparent;
-    outline: none;
-    border-radius: 0;
+    margin-bottom: 5px;
 }
 
-.field input:focus {
-    border-bottom: 2px solid #c49a45;
-}
-
-.field input::placeholder {
-    color: #aab3c0;
-    font-weight: normal;
-}
-
-.bottom-note {
+.entry .date {
+    color: #8492a5;
     font-size: 11px;
-    line-height: 1.7;
-    text-align: justify;
-    color: #596579;
-    margin-top: 25px;
+}
+
+.entry p {
+    margin-top: 7px;
+    text-align: left;
+}
+
+.reference-card {
+    background: #f1f5fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.reference-card h3 {
+    color: #1b3656;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.reference-card p {
+    font-size: 12px;
 }
 
 .signature {
-    margin: 45px auto 0;
-    border-top: 1px solid #142d4e;
-    max-width: 230px;
-    text-align: center;
-    padding-top: 7px;
-    font-size: 12px;
-    font-weight: bold;
+    border-top: 1px solid #dce3eb;
+    padding-top: 20px;
+    margin-top: 25px;
+}
+
+.signature h3 {
+    font-size: 15px;
     color: #142d4e;
 }
 
-.print-button {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    margin-top: 25px;
-    border: none;
-    border-radius: 7px;
+.signature p {
+    font-size: 12px;
+}
+
+/* BUTTONS */
+.actions {
+    max-width: 950px;
+    margin: 22px auto;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.actions button {
     background: #142d4e;
     color: white;
-    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 23px;
     font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
 }
 
-.print-button:hover {
-    background: #c49a45;
+.actions button:hover {
+    background: #286ba5;
 }
 
-@page {
-    size: A4;
-    margin: 10mm;
-}
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 700px) {
 
-@media(max-width:480px) {
     body {
-        padding: 7px;
-    }
-
-    .resume {
-        padding: 14px;
-    }
-
-    .header h1 {
-        font-size: 24px;
-        letter-spacing: 2px;
-    }
-
-    .photo-area {
-        width: 90px;
-        height: 110px;
-    }
-
-    .grid {
-        gap: 10px;
-    }
-
-    .field input {
-        font-size: 11px;
-    }
-
-    .section-title {
-        font-size: 11px;
-    }
-}
-
-@media print {
-    body {
-        padding: 0;
-        background: white;
-    }
-
-    .resume {
-        max-width: none;
-        box-shadow: none;
-        border-radius: 0;
         padding: 10px;
     }
 
-    .print-button {
-        display: none;
+    .resume {
+        grid-template-columns: 1fr;
+        border-radius: 10px;
     }
 
-    .section-title {
-        background: #142d4e !important;
-        color: white !important;
-        -webkit-print-color-adjust: exact;
+    .sidebar {
+        padding: 30px 23px;
+    }
+
+    .photo-container {
+        width: 140px;
+        height: 140px;
+    }
+
+    .profile h1 {
+        font-size: 23px;
+    }
+
+    .main {
+        padding: 28px 22px;
+    }
+
+    .header h2 {
+        font-size: 25px;
+    }
+
+    .section-heading h2 {
+        font-size: 14px;
+    }
+
+    .section p {
+        font-size: 13px;
+    }
+
+    .actions {
+        padding: 0 5px;
+    }
+
+    .actions button {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+/* PRINT */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    body {
+        padding: 0;
+        background: white;
         print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .resume {
+        width: 100%;
+        max-width: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .actions {
+        display: none;
     }
 }
 </style>
@@ -234,358 +371,297 @@ label {
 
 <div class="resume">
 
-<!-- HEADER -->
-<div class="header">
-    <div>
-        <h1>BIO-DATA</h1>
-        <div class="subtitle">PERSONAL INFORMATION SHEET</div>
-    </div>
-
-    <div class="photo-area">
-        <img src="28437e13-d54a-41c2-a891-52256a23a531.jpg" alt="ID Picture of Vincent Butalid">
-    </div>
-</div>
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
 
-<!-- PERSONAL DATA -->
-<div class="section">
-<div class="section-title">01 — PERSONAL DATA</div>
-<div class="grid">
-
-<div class="field">
-<label>Position Desired</label>
-<input placeholder="Enter position">
-</div>
+        <div class="profile">
 
-<div class="field">
-<label>Date</label>
-<input value="NOVEMBER 18, 2024">
-</div>
+            <div class="photo-container">
+                <img src="profile.jpg"
+                     alt="Profile Picture"
+                     class="photo"
+                     onerror="this.onerror=null;this.src='https://placehold.co/300x300/142d4e/ffffff?text=YOUR+PHOTO';">
+            </div>
 
-<div class="field">
-<label>Full Name</label>
-<input value="VINCENT CAGAAAN BUTALID">
-</div>
+            <h1>Vincent Cagaran Butalid</h1>
+            <p>PROFESSIONAL RESUME</p>
 
-<div class="field">
-<label>Sex</label>
-<input value="MALE">
-</div>
+        </div>
 
-<div class="field full">
-<label>City Address</label>
-<input value="MILITAR, TUKURAN">
-</div>
+        <!-- CONTACT -->
+        <div class="side-section">
 
-<div class="field full">
-<label>Provincial Address</label>
-<input value="ZAMBOANGA DEL SUR">
-</div>
+            <h2>Contact Details</h2>
 
-<div class="field">
-<label>Telephone</label>
-<input value="N/A">
-</div>
+            <div class="contact">
+                <strong>ADDRESS</strong>
+                Militar, Tukuran, Zamboanga del Sur
+            </div>
 
-<div class="field">
-<label>Cellphone</label>
-<input value="09114898777">
-</div>
+            <div class="contact">
+                <strong>PHONE NUMBER</strong>
+                [Enter Contact Number]
+            </div>
 
-<div class="field full">
-<label>Email Address</label>
-<input value="butalid.vincent20@gmail.com">
-</div>
+            <div class="contact">
+                <strong>EMAIL ADDRESS</strong>
+                [Enter Email Address]
+            </div>
 
-<div class="field">
-<label>Date of Birth</label>
-<input value="MAY 30, 1997">
-</div>
+        </div>
 
-<div class="field">
-<label>Place of Birth</label>
-<input value="TUKURAN, ZDS">
-</div>
+        <!-- PERSONAL INFORMATION -->
+        <div class="side-section">
 
-<div class="field">
-<label>Civil Status</label>
-<input value="SINGLE">
-</div>
+            <h2>Personal Details</h2>
 
-<div class="field">
-<label>Citizenship</label>
-<input value="FILIPINO">
-</div>
+            <div class="contact">
+                <strong>DATE OF BIRTH</strong>
+                May 30, 1997
+            </div>
 
-<div class="field">
-<label>Height</label>
-<input value="5'6&quot;">
-</div>
+            <div class="contact">
+                <strong>PLACE OF BIRTH</strong>
+                Tukuran, Zamboanga del Sur
+            </div>
 
-<div class="field">
-<label>Weight</label>
-<input value="58 KGS">
-</div>
+            <div class="contact">
+                <strong>CIVIL STATUS</strong>
+                Single
+            </div>
 
-<div class="field full">
-<label>Religion</label>
-<input value="ROMAN CATHOLIC">
-</div>
+            <div class="contact">
+                <strong>CITIZENSHIP</strong>
+                Filipino
+            </div>
 
-<div class="field">
-<label>Spouse</label>
-<input value="N/A">
-</div>
+            <div class="contact">
+                <strong>RELIGION</strong>
+                Roman Catholic
+            </div>
 
-<div class="field">
-<label>Occupation</label>
-<input value="N/A">
-</div>
+        </div>
 
-<div class="field">
-<label>Name of Children</label>
-<input value="N/A">
-</div>
+        <!-- SKILLS -->
+        <div class="side-section">
 
-<div class="field">
-<label>Date of Birth</label>
-<input value="N/A">
-</div>
+            <h2>Skills</h2>
 
-<div class="field">
-<label>Father's Name</label>
-<input value="ISAIAS DIO, BUTALID JR.">
-</div>
+            <ul>
+                <li>Computer Literacy</li>
+                <li>Basic Computer Operations</li>
+                <li>Administrative Support</li>
+                <li>Communication Skills</li>
+                <li>Time Management</li>
+            </ul>
 
-<div class="field">
-<label>Father's Occupation</label>
-<input value="FISHERMAN">
-</div>
+        </div>
 
-<div class="field">
-<label>Mother's Name</label>
-<input value="ROSAUNDA MIANO CAGAAAN">
-</div>
+        <!-- LANGUAGES -->
+        <div class="side-section">
 
-<div class="field">
-<label>Mother's Occupation</label>
-<input value="HOUSEWIFE">
-</div>
+            <h2>Languages</h2>
 
-<div class="field full">
-<label>Parent's Address</label>
-<input value="P. BURGOS, MILITAR, TUKURAN, ZDS">
-</div>
+            <ul>
+                <li>Bisaya</li>
+                <li>Tagalog</li>
+                <li>English</li>
+            </ul>
 
-<div class="field full">
-<label>Language/Dialect Spoken and Written</label>
-<input value="BISAYA, TAGALOG & ENGLISH">
-</div>
+        </div>
 
-<div class="field full">
-<label>Emergency Contact Person</label>
-<input value="RITCHEL BOTAVIO ORTEGA">
-</div>
+    </aside>
 
-<div class="field full">
-<label>Emergency Contact Address</label>
-<input value="BULGU / MILITAR, TUKURAN, ZDS">
-</div>
+    <!-- RIGHT CONTENT -->
+    <main class="main">
 
-</div>
-</div>
+        <div class="header">
 
-<!-- EDUCATION -->
-<div class="section">
-<div class="section-title">02 — EDUCATIONAL ATTAINMENT</div>
-<div class="grid">
-
-<div class="field full">
-<label>Elementary</label>
-<input value="MILITAR ELEMENTARY SCHOOL">
-</div>
+            <span>CURRICULUM VITAE</span>
 
-<div class="field">
-<label>Year Graduated</label>
-<input value="2011">
-</div>
+            <h2>Professional Profile</h2>
 
-<div class="field full">
-<label>High School</label>
-<input value="TUKURAN TECHNICAL VOCATIONAL HIGH SCHOOL">
-</div>
+            <p>Dedicated • Responsible • Hardworking</p>
 
-<div class="field">
-<label>Year Graduated</label>
-<input value="2015">
-</div>
+        </div>
 
-<div class="field full">
-<label>College</label>
-<input value="JOSEFINA HERRERA CERILLES STATE COLLEGE">
-</div>
+        <!-- CAREER OBJECTIVE -->
+        <section class="section">
 
-<div class="field">
-<label>Year Graduated</label>
-<input value="APRIL 10, 2019">
-</div>
+            <div class="section-heading">
+                <div class="number">01</div>
+                <h2>Career Objective</h2>
+            </div>
 
-<div class="field full">
-<label>Degree Received</label>
-<input value="BACHELOR IN ELEMENTARY EDUCATION">
-</div>
+            <p>
+                To obtain a position where I can apply my knowledge,
+                skills, and work experience while contributing to the
+                success of the organization. I am willing to learn,
+                accept responsibilities, and develop my professional
+                abilities through hard work and dedication.
+            </p>
 
-<div class="field full">
-<label>Special Skills</label>
-<input value="COMPUTER LITERATE">
-</div>
+        </section>
 
-</div>
-</div>
+        <!-- EDUCATION -->
+        <section class="section">
 
-<!-- EMPLOYMENT -->
-<div class="section">
-<div class="section-title">03 — EMPLOYMENT RECORDS</div>
-<div class="grid">
-
-<div class="field full">
-<label>Company Name</label>
-<input value="LGU TUKURAN / MUNICIPAL ECONOMIC ENTERPRISE DEVELOPMENT OFFICE">
-</div>
+            <div class="section-heading">
+                <div class="number">02</div>
+                <h2>Educational Attainment</h2>
+            </div>
 
-<div class="field">
-<label>Position</label>
-<input value="JOB ORDER">
-</div>
+            <div class="timeline">
 
-<div class="field">
-<label>Employment Period</label>
-<input value="JUNE 01 - DECEMBER 31, 2019">
-</div>
+                <div class="entry">
 
-<div class="field full">
-<label>Company Name</label>
-<input value="LGU TUKURAN / MUNICIPAL TREASURER'S OFFICE">
-</div>
+                    <h3>Bachelor in Elementary Education</h3>
 
-<div class="field">
-<label>Position</label>
-<input value="ADMIN. AIDE II (BOOKKEEPER I)">
-</div>
+                    <div class="school">
+                        Josefina H. Cerilles State College
+                    </div>
 
-<div class="field">
-<label>Employment Period</label>
-<input value="OCTOBER 16, 2023 - PERMANENT">
-</div>
+                    <div class="date">
+                        Graduated: April 10, 2019
+                    </div>
 
-</div>
-</div>
+                </div>
 
-<!-- CHARACTER REFERENCES -->
-<div class="section">
-<div class="section-title">04 — CHARACTER REFERENCES</div>
-<div class="grid">
-
-<div class="field">
-<label>Name</label>
-<input value="RH-YNNIE F. FELLOGAN">
-</div>
+                <div class="entry">
 
-<div class="field">
-<label>Company</label>
-<input value="PNP">
-</div>
+                    <h3>High School</h3>
 
-<div class="field">
-<label>Position</label>
-<input value="POLICE">
-</div>
+                    <div class="school">
+                        Tukuran Technical Vocational High School
+                    </div>
 
-<div class="field">
-<label>Contact Number</label>
-<input value="09114890121">
-</div>
+                    <div class="date">
+                        Graduated: 2015
+                    </div>
 
-<div class="field">
-<label>Name</label>
-<input value="TRAVINCH G. CAPUYAT">
-</div>
+                </div>
 
-<div class="field">
-<label>Company</label>
-<input value="DEPED">
-</div>
+                <div class="entry">
 
-<div class="field">
-<label>Position</label>
-<input value="TEACHER II">
-</div>
+                    <h3>Elementary</h3>
 
-<div class="field">
-<label>Contact Number</label>
-<input value="099218093312">
-</div>
+                    <div class="school">
+                        Militar Elementary School
+                    </div>
 
-</div>
-</div>
+                    <div class="date">
+                        Graduated: 2011
+                    </div>
 
-<!-- OTHER INFORMATION -->
-<div class="section">
-<div class="section-title">05 — OTHER INFORMATION</div>
-<div class="grid">
-
-<div class="field">
-<label>Residence Certificate No.</label>
-<input placeholder="Enter number">
-</div>
+                </div>
 
-<div class="field">
-<label>Issued At</label>
-<input placeholder="Enter place">
-</div>
+            </div>
 
-<div class="field">
-<label>Issued On</label>
-<input placeholder="Enter date">
-</div>
+        </section>
 
-<div class="field">
-<label>SSS Number</label>
-<input placeholder="Enter SSS number">
-</div>
+        <!-- WORK EXPERIENCE -->
+        <section class="section">
 
-<div class="field">
-<label>TIN</label>
-<input value="710-319-283-000">
-</div>
+            <div class="section-heading">
+                <div class="number">03</div>
+                <h2>Work Experience</h2>
+            </div>
 
-<div class="field">
-<label>NBI Number</label>
-<input placeholder="Enter NBI number">
-</div>
+            <div class="timeline">
 
-<div class="field full">
-<label>Passport Number</label>
-<input value="P601422C">
-</div>
+                <div class="entry">
 
-</div>
-</div>
+                    <h3>Job Order Employee</h3>
 
-<!-- CERTIFICATION -->
-<div class="bottom-note">
-I hereby certify that the above information is true and correct
-to the best of my knowledge and belief. I also understand that
-any misinterpretation will be considered sufficient reason for
-withdrawal of an offer or subsequent dismissal if employed.
-</div>
+                    <div class="school">
+                        LGU Tukuran – Municipal Economic Enterprise
+                        Development Office
+                    </div>
+
+                    <div class="date">
+                        June 2019 – December 2019
+                    </div>
+
+                </div>
+
+                <div class="entry">
+
+                    <h3>Administrative Aide II</h3>
+
+                    <div class="school">
+                        LGU Tukuran – Municipal Treasury Office
+                    </div>
 
-<div class="signature">
-Applicant's Signature
+                    <div class="date">
+                        October 2019 – Present
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CHARACTER REFERENCES -->
+        <section class="section">
+
+            <div class="section-heading">
+                <div class="number">04</div>
+                <h2>Character References</h2>
+            </div>
+
+            <div class="reference-card">
+
+                <h3>Rhynnie F. Fellogan</h3>
+
+                <p>PNP</p>
+
+            </div>
+
+            <div class="reference-card">
+
+                <h3>Travinh G. Capual</h3>
+
+                <p>Teacher II – DepEd</p>
+
+            </div>
+
+        </section>
+
+        <!-- DECLARATION -->
+        <section class="section">
+
+            <div class="section-heading">
+                <div class="number">05</div>
+                <h2>Declaration</h2>
+            </div>
+
+            <p>
+                I hereby certify that all the information provided
+                in this resume is true and correct to the best of
+                my knowledge and belief.
+            </p>
+
+            <div class="signature">
+
+                <h3>Vincent Cagaran Butalid</h3>
+
+                <p>Applicant's Signature</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </div>
+
+<!-- PRINT BUTTON -->
+<div class="actions">
 
-<button class="print-button" onclick="window.print()">
-PRINT / SAVE AS PDF
-</button>
+    <button onclick="window.print()">
+        Print / Download PDF
+    </button>
 
 </div>
 
