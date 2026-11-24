@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vincent Butalid - Professional Resume</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 * {
@@ -14,43 +16,71 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #e9eef5;
-    color: #29384a;
-    padding: 30px 15px;
+    font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+    background: linear-gradient(135deg, #d4e0ec 0%, #eef3f8 50%, #d4e0ec 100%);
+    color: #2a3b50;
+    padding: 40px 16px;
+    min-height: 100vh;
 }
 
 .resume {
-    max-width: 950px;
+    max-width: 980px;
     margin: auto;
-    background: white;
+    background: #ffffff;
     display: grid;
-    grid-template-columns: 290px 1fr;
-    border-radius: 12px;
+    grid-template-columns: 310px 1fr;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 8px 35px rgba(0,0,0,.12);
+    box-shadow: 0 25px 70px rgba(15, 39, 68, 0.18), 0 6px 18px rgba(15, 39, 68, 0.08);
 }
 
-/* SIDEBAR */
+/* ===== SIDEBAR ===== */
 .sidebar {
-    background: #142d4e;
-    color: white;
-    padding: 35px 25px;
+    background: linear-gradient(170deg, #0a1e36 0%, #143152 45%, #1a3f66 100%);
+    color: #e8eef5;
+    padding: 42px 26px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(90, 163, 232, 0.18), transparent 70%);
+}
+
+.sidebar::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(90, 163, 232, 0.1), transparent 70%);
 }
 
 .profile {
     text-align: center;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #49617d;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    position: relative;
+    z-index: 1;
 }
 
 .photo-container {
-    width: 155px;
-    height: 155px;
-    margin: 0 auto 18px;
-    padding: 5px;
+    width: 165px;
+    height: 165px;
+    margin: 0 auto 20px;
+    padding: 4px;
     border-radius: 50%;
-    background: #8fc4ff;
+    background: conic-gradient(from 180deg, #5aa3e8, #8fc4ff, #3d7cc9, #5aa3e8);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35), 0 0 0 6px rgba(90, 163, 232, 0.12);
 }
 
 .photo {
@@ -59,49 +89,85 @@ body {
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
-    border: 3px solid white;
+    border: 3px solid #0a1e36;
     display: block;
 }
 
 .profile h1 {
-    font-size: 22px;
+    font-size: 21px;
     line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
+    color: #ffffff;
 }
 
 .profile p {
-    color: #b8cee8;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-top: 8px;
+    color: #8fb8e0;
+    font-size: 10.5px;
+    letter-spacing: 3.5px;
+    margin-top: 10px;
+    font-weight: 600;
 }
 
 .side-section {
-    margin-top: 28px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 .side-section h2 {
-    font-size: 14px;
+    font-size: 11.5px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #91c5fa;
-    border-bottom: 1px solid #49617d;
+    letter-spacing: 2px;
+    color: #8fc4ff;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
     padding-bottom: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.side-section h2 i {
+    font-size: 13px;
+    color: #5aa3e8;
 }
 
 .contact {
-    margin-bottom: 13px;
-    font-size: 13px;
+    margin-bottom: 15px;
+    font-size: 12.5px;
     line-height: 1.6;
+    color: #d4e1ef;
     overflow-wrap: anywhere;
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
 }
 
-.contact strong {
+.contact .icon-box {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(90, 163, 232, 0.15);
+    border: 1px solid rgba(90, 163, 232, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #8fc4ff;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.contact .text strong {
     display: block;
-    color: #a9c7e8;
-    font-size: 11px;
-    letter-spacing: 1px;
+    color: #8fb8e0;
+    font-size: 9.5px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 2px;
 }
 
 .side-section ul {
@@ -109,260 +175,347 @@ body {
 }
 
 .side-section li {
-    font-size: 13px;
-    margin-bottom: 12px;
+    font-size: 12.5px;
+    margin-bottom: 11px;
+    color: #d4e1ef;
+    padding-left: 22px;
+    position: relative;
 }
 
 .side-section li::before {
-    content: "◆";
-    color: #8fc4ff;
-    font-size: 9px;
-    margin-right: 10px;
+    content: "\f111";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 6px;
+    color: #5aa3e8;
 }
 
-/* MAIN CONTENT */
+/* ===== MAIN CONTENT ===== */
 .main {
-    padding: 40px 35px;
+    padding: 45px 40px;
+    background: #ffffff;
 }
 
 .header {
-    margin-bottom: 32px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #eef2f7;
+    position: relative;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3984c5, #5aa3e8, #8fc4ff);
+    border-radius: 3px;
 }
 
 .header span {
     color: #3984c5;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header span i {
     font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 3px;
 }
 
 .header h2 {
-    font-size: 29px;
-    color: #142d4e;
-    margin-top: 8px;
+    font-size: 32px;
+    color: #0a1e36;
+    margin-top: 10px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .header p {
     font-size: 13px;
     color: #8290a1;
-    margin-top: 8px;
+    margin-top: 10px;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header p i {
+    color: #5aa3e8;
+    font-size: 11px;
 }
 
 .section {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
 .section-heading {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
+    gap: 14px;
+    margin-bottom: 20px;
 }
 
 .number {
-    width: 35px;
-    height: 35px;
-    background: #e7f1fc;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #e7f1fc, #d4e6f8);
     color: #2469a6;
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-size: 13px;
+    font-weight: 700;
+    font-size: 12px;
     flex-shrink: 0;
+    box-shadow: 0 3px 8px rgba(36, 105, 166, 0.15);
+    border: 1px solid rgba(36, 105, 166, 0.12);
 }
 
 .section-heading h2 {
     font-size: 15px;
-    color: #142d4e;
-    letter-spacing: 1px;
+    color: #0a1e36;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.section-heading h2 i {
+    color: #5aa3e8;
+    font-size: 15px;
 }
 
 .section p {
     font-size: 13px;
-    line-height: 1.8;
+    line-height: 1.85;
     color: #586779;
     text-align: justify;
 }
 
+/* ===== TIMELINE ===== */
 .timeline {
-    border-left: 2px solid #d8e7f6;
-    padding-left: 20px;
-    margin-left: 9px;
+    border-left: 2px solid #dce8f5;
+    padding-left: 22px;
+    margin-left: 10px;
 }
 
 .entry {
     position: relative;
-    margin-bottom: 23px;
+    margin-bottom: 24px;
 }
 
 .entry::before {
     content: "";
     position: absolute;
-    left: -26px;
-    top: 4px;
-    width: 10px;
-    height: 10px;
+    left: -28px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: #3986c8;
+    background: linear-gradient(135deg, #3986c8, #5aa3e8);
+    box-shadow: 0 0 0 4px rgba(57, 134, 200, 0.15);
+}
+
+.entry-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.entry-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #eef5fc, #dbeaf8);
+    border: 1px solid rgba(57, 134, 200, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #347ab7;
+    font-size: 14px;
+    flex-shrink: 0;
 }
 
 .entry h3 {
-    font-size: 14px;
-    color: #243c59;
-    margin-bottom: 5px;
+    font-size: 14.5px;
+    color: #1b3656;
+    margin-bottom: 4px;
+    font-weight: 700;
 }
 
 .entry .school {
     color: #347ab7;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
 .entry .date {
     color: #8492a5;
-    font-size: 11px;
+    font-size: 11.5px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.entry p {
-    margin-top: 7px;
-    text-align: left;
+.entry .date i {
+    font-size: 10px;
+    color: #5aa3e8;
 }
 
+/* ===== REFERENCE CARDS ===== */
 .reference-card {
-    background: #f1f5fa;
-    padding: 15px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #f5f9fd, #eef4fa);
+    padding: 16px 20px;
+    border-radius: 10px;
     margin-bottom: 12px;
+    border-left: 3px solid #5aa3e8;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.reference-card h3 {
+.reference-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 14px rgba(36, 105, 166, 0.12);
+}
+
+.ref-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3984c5, #5aa3e8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 17px;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(57, 132, 197, 0.3);
+}
+
+.ref-info h3 {
     color: #1b3656;
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    font-weight: 700;
 }
 
-.reference-card p {
+.ref-info p {
     font-size: 12px;
+    color: #6a7a8d;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
+.ref-info p i {
+    font-size: 10px;
+    color: #5aa3e8;
+}
+
+/* ===== SIGNATURE ===== */
 .signature {
-    border-top: 1px solid #dce3eb;
-    padding-top: 20px;
-    margin-top: 25px;
+    border-top: 1px solid #e4eaf1;
+    padding-top: 22px;
+    margin-top: 28px;
 }
 
 .signature h3 {
-    font-size: 15px;
-    color: #142d4e;
+    font-size: 16px;
+    color: #0a1e36;
+    font-weight: 700;
 }
 
 .signature p {
     font-size: 12px;
+    color: #8492a5;
+    margin-top: 4px;
 }
 
-/* BUTTONS */
+/* ===== BUTTONS ===== */
 .actions {
-    max-width: 950px;
-    margin: 22px auto;
+    max-width: 980px;
+    margin: 26px auto;
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 .actions button {
-    background: #142d4e;
+    background: linear-gradient(135deg, #143152, #2469a6);
     color: white;
     border: none;
-    border-radius: 8px;
-    padding: 13px 23px;
+    border-radius: 10px;
+    padding: 14px 30px;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 16px rgba(36, 105, 166, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
 
 .actions button:hover {
-    background: #286ba5;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(36, 105, 166, 0.45);
 }
 
-/* MOBILE RESPONSIVE */
+.actions button:active {
+    transform: translateY(0);
+}
+
+/* ===== MOBILE ===== */
 @media screen and (max-width: 700px) {
-
-    body {
-        padding: 10px;
-    }
-
-    .resume {
-        grid-template-columns: 1fr;
-        border-radius: 10px;
-    }
-
-    .sidebar {
-        padding: 30px 23px;
-    }
-
-    .photo-container {
-        width: 140px;
-        height: 140px;
-    }
-
-    .profile h1 {
-        font-size: 23px;
-    }
-
-    .main {
-        padding: 28px 22px;
-    }
-
-    .header h2 {
-        font-size: 25px;
-    }
-
-    .section-heading h2 {
-        font-size: 14px;
-    }
-
-    .section p {
-        font-size: 13px;
-    }
-
-    .actions {
-        padding: 0 5px;
-    }
-
-    .actions button {
-        width: 100%;
-        padding: 15px;
-    }
+    body { padding: 12px; }
+    .resume { grid-template-columns: 1fr; border-radius: 14px; }
+    .sidebar { padding: 34px 24px; }
+    .photo-container { width: 148px; height: 148px; }
+    .profile h1 { font-size: 22px; }
+    .main { padding: 30px 24px; }
+    .header h2 { font-size: 26px; }
+    .section-heading h2 { font-size: 13.5px; }
+    .actions { padding: 0 8px; }
+    .actions button { width: 100%; padding: 16px; justify-content: center; }
 }
 
-/* PRINT */
+/* ===== PRINT ===== */
 @media print {
-    @page {
-        size: A4;
-        margin: 0;
-    }
-
+    @page { size: A4; margin: 0; }
     body {
         padding: 0;
         background: white;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
-
     .resume {
         width: 100%;
         max-width: none;
         border-radius: 0;
         box-shadow: none;
     }
-
-    .actions {
-        display: none;
-    }
+    .actions { display: none; }
+    .reference-card:hover { transform: none; box-shadow: none; }
+    .sidebar::before, .sidebar::after { display: none; }
 }
 </style>
 </head>
@@ -375,78 +528,93 @@ body {
     <aside class="sidebar">
 
         <div class="profile">
-
             <div class="photo-container">
-                <img src="28437e13-d54a-41c2-a891-52256a23a531.jpg"
+                <img src="profile.jpg"
                      alt="Profile Picture"
                      class="photo"
-                     onerror="this.onerror=null;this.src='https://placehold.co/300x300/142d4e/ffffff?text=YOUR+PHOTO';">
+                     onerror="this.onerror=null;this.src='https://placehold.co/300x300/0a1e36/ffffff?text=YOUR+PHOTO';">
             </div>
-
             <h1>Vincent Cagaran Butalid</h1>
             <p>PROFESSIONAL RESUME</p>
-
         </div>
 
         <!-- CONTACT -->
         <div class="side-section">
-
-            <h2>Contact Details</h2>
+            <h2><i class="fa-solid fa-address-card"></i> Contact Details</h2>
 
             <div class="contact">
-                <strong>ADDRESS</strong>
-                Militar, Tukuran, Zamboanga del Sur
+                <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="text">
+                    <strong>ADDRESS</strong>
+                    Militar, Tukuran, Zamboanga del Sur
+                </div>
             </div>
 
             <div class="contact">
-                <strong>PHONE NUMBER</strong>
-                [Enter Contact Number]
+                <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                <div class="text">
+                    <strong>PHONE NUMBER</strong>
+                    [Enter Contact Number]
+                </div>
             </div>
 
             <div class="contact">
-                <strong>EMAIL ADDRESS</strong>
-                [Enter Email Address]
+                <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                <div class="text">
+                    <strong>EMAIL ADDRESS</strong>
+                    [Enter Email Address]
+                </div>
             </div>
-
         </div>
 
         <!-- PERSONAL INFORMATION -->
         <div class="side-section">
-
-            <h2>Personal Details</h2>
+            <h2><i class="fa-solid fa-user"></i> Personal Details</h2>
 
             <div class="contact">
-                <strong>DATE OF BIRTH</strong>
-                May 30, 1997
+                <div class="icon-box"><i class="fa-solid fa-cake-candles"></i></div>
+                <div class="text">
+                    <strong>DATE OF BIRTH</strong>
+                    May 30, 1997
+                </div>
             </div>
 
             <div class="contact">
-                <strong>PLACE OF BIRTH</strong>
-                Tukuran, Zamboanga del Sur
+                <div class="icon-box"><i class="fa-solid fa-map-pin"></i></div>
+                <div class="text">
+                    <strong>PLACE OF BIRTH</strong>
+                    Tukuran, Zamboanga del Sur
+                </div>
             </div>
 
             <div class="contact">
-                <strong>CIVIL STATUS</strong>
-                Single
+                <div class="icon-box"><i class="fa-solid fa-heart"></i></div>
+                <div class="text">
+                    <strong>CIVIL STATUS</strong>
+                    Single
+                </div>
             </div>
 
             <div class="contact">
-                <strong>CITIZENSHIP</strong>
-                Filipino
+                <div class="icon-box"><i class="fa-solid fa-flag"></i></div>
+                <div class="text">
+                    <strong>CITIZENSHIP</strong>
+                    Filipino
+                </div>
             </div>
 
             <div class="contact">
-                <strong>RELIGION</strong>
-                Roman Catholic
+                <div class="icon-box"><i class="fa-solid fa-church"></i></div>
+                <div class="text">
+                    <strong>RELIGION</strong>
+                    Roman Catholic
+                </div>
             </div>
-
         </div>
 
         <!-- SKILLS -->
         <div class="side-section">
-
-            <h2>Skills</h2>
-
+            <h2><i class="fa-solid fa-star"></i> Skills</h2>
             <ul>
                 <li>Computer Literacy</li>
                 <li>Basic Computer Operations</li>
@@ -454,20 +622,16 @@ body {
                 <li>Communication Skills</li>
                 <li>Time Management</li>
             </ul>
-
         </div>
 
         <!-- LANGUAGES -->
         <div class="side-section">
-
-            <h2>Languages</h2>
-
+            <h2><i class="fa-solid fa-language"></i> Languages</h2>
             <ul>
                 <li>Bisaya</li>
                 <li>Tagalog</li>
                 <li>English</li>
             </ul>
-
         </div>
 
     </aside>
@@ -476,23 +640,17 @@ body {
     <main class="main">
 
         <div class="header">
-
-            <span>CURRICULUM VITAE</span>
-
+            <span><i class="fa-solid fa-file-lines"></i> CURRICULUM VITAE</span>
             <h2>Professional Profile</h2>
-
-            <p>Dedicated • Responsible • Hardworking</p>
-
+            <p><i class="fa-solid fa-circle-check"></i> Dedicated &bull; Responsible &bull; Hardworking</p>
         </div>
 
         <!-- CAREER OBJECTIVE -->
         <section class="section">
-
             <div class="section-heading">
                 <div class="number">01</div>
-                <h2>Career Objective</h2>
+                <h2><i class="fa-solid fa-bullseye"></i> Career Objective</h2>
             </div>
-
             <p>
                 To obtain a position where I can apply my knowledge,
                 skills, and work experience while contributing to the
@@ -500,156 +658,117 @@ body {
                 accept responsibilities, and develop my professional
                 abilities through hard work and dedication.
             </p>
-
         </section>
 
         <!-- EDUCATION -->
         <section class="section">
-
             <div class="section-heading">
                 <div class="number">02</div>
-                <h2>Educational Attainment</h2>
+                <h2><i class="fa-solid fa-graduation-cap"></i> Educational Attainment</h2>
             </div>
-
             <div class="timeline">
-
                 <div class="entry">
-
-                    <h3>Bachelor in Elementary Education</h3>
-
-                    <div class="school">
-                        Josefina H. Cerilles State College
+                    <div class="entry-header">
+                        <div class="entry-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div>
+                            <h3>Bachelor in Elementary Education</h3>
+                            <div class="school">Josefina H. Cerilles State College</div>
+                            <div class="date"><i class="fa-regular fa-calendar"></i> Graduated: April 10, 2019</div>
+                        </div>
                     </div>
-
-                    <div class="date">
-                        Graduated: April 10, 2019
-                    </div>
-
                 </div>
-
                 <div class="entry">
-
-                    <h3>High School</h3>
-
-                    <div class="school">
-                        Tukuran Technical Vocational High School
+                    <div class="entry-header">
+                        <div class="entry-icon"><i class="fa-solid fa-school"></i></div>
+                        <div>
+                            <h3>High School</h3>
+                            <div class="school">Tukuran Technical Vocational High School</div>
+                            <div class="date"><i class="fa-regular fa-calendar"></i> Graduated: 2015</div>
+                        </div>
                     </div>
-
-                    <div class="date">
-                        Graduated: 2015
-                    </div>
-
                 </div>
-
                 <div class="entry">
-
-                    <h3>Elementary</h3>
-
-                    <div class="school">
-                        Militar Elementary School
+                    <div class="entry-header">
+                        <div class="entry-icon"><i class="fa-solid fa-book-open"></i></div>
+                        <div>
+                            <h3>Elementary</h3>
+                            <div class="school">Militar Elementary School</div>
+                            <div class="date"><i class="fa-regular fa-calendar"></i> Graduated: 2011</div>
+                        </div>
                     </div>
-
-                    <div class="date">
-                        Graduated: 2011
-                    </div>
-
                 </div>
-
             </div>
-
         </section>
 
         <!-- WORK EXPERIENCE -->
         <section class="section">
-
             <div class="section-heading">
                 <div class="number">03</div>
-                <h2>Work Experience</h2>
+                <h2><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
             </div>
-
             <div class="timeline">
-
                 <div class="entry">
-
-                    <h3>Job Order Employee</h3>
-
-                    <div class="school">
-                        LGU Tukuran – Municipal Economic Enterprise
-                        Development Office
+                    <div class="entry-header">
+                        <div class="entry-icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <div>
+                            <h3>Job Order Employee</h3>
+                            <div class="school">LGU Tukuran – Municipal Economic Enterprise Development Office</div>
+                            <div class="date"><i class="fa-regular fa-calendar"></i> June 2019 – December 2019</div>
+                        </div>
                     </div>
-
-                    <div class="date">
-                        June 2019 – December 2019
-                    </div>
-
                 </div>
-
                 <div class="entry">
-
-                    <h3>Administrative Aide II</h3>
-
-                    <div class="school">
-                        LGU Tukuran – Municipal Treasury Office
+                    <div class="entry-header">
+                        <div class="entry-icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <div>
+                            <h3>Administrative Aide II</h3>
+                            <div class="school">LGU Tukuran – Municipal Treasury Office</div>
+                            <div class="date"><i class="fa-regular fa-calendar"></i> October 2019 – Present</div>
+                        </div>
                     </div>
-
-                    <div class="date">
-                        October 2019 – Present
-                    </div>
-
                 </div>
-
             </div>
-
         </section>
 
         <!-- CHARACTER REFERENCES -->
         <section class="section">
-
             <div class="section-heading">
                 <div class="number">04</div>
-                <h2>Character References</h2>
+                <h2><i class="fa-solid fa-users"></i> Character References</h2>
             </div>
 
             <div class="reference-card">
-
-                <h3>Rhynnie F. Fellogan</h3>
-
-                <p>PNP</p>
-
+                <div class="ref-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="ref-info">
+                    <h3>Rhynnie F. Fellogan</h3>
+                    <p><i class="fa-solid fa-badge"></i> PNP</p>
+                </div>
             </div>
 
             <div class="reference-card">
-
-                <h3>Travinh G. Capual</h3>
-
-                <p>Teacher II – DepEd</p>
-
+                <div class="ref-avatar"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <div class="ref-info">
+                    <h3>Travinh G. Capual</h3>
+                    <p><i class="fa-solid fa-badge"></i> Teacher II – DepEd</p>
+                </div>
             </div>
-
         </section>
 
         <!-- DECLARATION -->
         <section class="section">
-
             <div class="section-heading">
                 <div class="number">05</div>
-                <h2>Declaration</h2>
+                <h2><i class="fa-solid fa-file-signature"></i> Declaration</h2>
             </div>
-
             <p>
                 I hereby certify that all the information provided
                 in this resume is true and correct to the best of
                 my knowledge and belief.
             </p>
-
             <div class="signature">
-
                 <h3>Vincent Cagaran Butalid</h3>
-
                 <p>Applicant's Signature</p>
-
             </div>
-
         </section>
 
     </main>
@@ -658,11 +777,9 @@ body {
 
 <!-- PRINT BUTTON -->
 <div class="actions">
-
     <button onclick="window.print()">
-        Print / Download PDF
+        <i class="fa-solid fa-print"></i> Print / Download PDF
     </button>
-
 </div>
 
 </body>
